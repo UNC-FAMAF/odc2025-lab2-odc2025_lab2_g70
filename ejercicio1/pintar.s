@@ -131,6 +131,130 @@ pintar_arboles:
 
     ret
 
+//=====================================> PINTAR MANZANA<=====================================//
+.globl pintar_manzana
+pintar_manzana:
+
+    sub sp, sp, #48
+    str x1, [sp]
+    str x2, [sp, #8]
+    str x3, [sp, #16]
+    str x4, [sp, #24]
+    str x7, [sp, #32]
+    str x30, [sp, #40]
+
+            //Manzanas primer arbol (circulo, rectangulo X2)
+        bl set_color_rojo
+    mov x1, 90       // centro X copa
+    mov x2, 330      // centro Y copa
+    mov x3, 4       // radio copa
+    bl draw_circle
+
+     bl set_color_negro
+    mov x1, 90
+    mov x2, 326
+    mov x3, 91
+    mov x4, 325
+    bl draw_rectangle
+
+    bl set_color_verde
+    mov x1, 91
+    mov x2, 326
+    mov x3, 94
+    mov x4, 325
+    bl draw_rectangle
+
+        bl set_color_rojo
+    mov x1, 70       // centro X copa
+    mov x2, 360      // centro Y copa
+    mov x3, 4       // radio copa
+    bl draw_circle
+
+     bl set_color_negro
+    mov x1, 70
+    mov x2, 356
+    mov x3, 71
+    mov x4, 355
+    bl draw_rectangle
+
+    bl set_color_verde
+    mov x1, 71
+    mov x2, 356
+    mov x3, 74
+    mov x4, 355
+    bl draw_rectangle
+
+            //Manzanas segundo arbol (circulo, rectangulo X2)
+        bl set_color_rojo
+    mov x1, 530       // centro X copa
+    mov x2, 250      // centro Y copa
+    mov x3, 4       // radio copa
+    bl draw_circle
+
+     bl set_color_negro
+    mov x1, 530
+    mov x2, 246
+    mov x3, 531
+    mov x4, 245
+    bl draw_rectangle
+
+    bl set_color_verde
+    mov x1, 531
+    mov x2, 246
+    mov x3, 534
+    mov x4, 245
+    bl draw_rectangle
+
+        bl set_color_rojo
+    mov x1, 560       // centro X copa
+    mov x2, 280      // centro Y copa
+    mov x3, 4       // radio copa
+    bl draw_circle
+
+     bl set_color_negro
+    mov x1, 560
+    mov x2, 276
+    mov x3, 561
+    mov x4, 275
+    bl draw_rectangle
+
+    bl set_color_verde
+    mov x1, 561
+    mov x2, 276
+    mov x3, 564
+    mov x4, 275
+    bl draw_rectangle
+
+            bl set_color_rojo
+    mov x1, 520       // centro X copa
+    mov x2, 300      // centro Y copa
+    mov x3, 4       // radio copa
+    bl draw_circle
+
+     bl set_color_negro
+    mov x1, 520
+    mov x2, 296
+    mov x3, 521
+    mov x4, 295
+    bl draw_rectangle
+
+    bl set_color_verde
+    mov x1, 521
+    mov x2, 296
+    mov x3, 524
+    mov x4, 295
+    bl draw_rectangle
+
+    ldr x30, [sp, #40]
+    ldr x7, [sp, #32]
+    ldr x4, [sp, #24]
+    ldr x3, [sp, #16]
+    ldr x2, [sp, #8]
+    ldr x1, [sp]
+    add sp, sp, #48
+
+    ret
+
 //=====================================> PINTAR CAMINO <=====================================//
 
 .globl pintar_camino
@@ -816,8 +940,8 @@ pintar_avion:
     mov x2, #80          
     mov x3, #623         
     mov x4, #100     
-
     bl draw_rectangle
+
     // Cola (rectángulo vertical)
     mov x1, #545
     mov x2, #100
@@ -829,6 +953,19 @@ pintar_avion:
     mov x2, #88
     mov x3, #560
     mov x4, #92
+    bl draw_rectangle
+
+    //(Para cartel)
+    mov x1, #510
+    mov x2, #95
+    mov x3, #545
+    mov x4, #100
+    bl draw_rectangle
+
+    mov x1, #510
+    mov x2, #80
+    mov x3, #545
+    mov x4, #85
     bl draw_rectangle
 
     // Ventanas (3 círculos celestes)
@@ -889,6 +1026,21 @@ pintar_cartel:
     mov x4, #40          // y2 = 180 (superior)
     bl draw_rectangle
 
+                // borde izquierdo (rectángulo vertical)
+    bl set_color_negro
+    mov x1, #120          // x1 = 580 (inicio x)
+    mov x2, #120          // y1 = 160 (inferior)
+    mov x3, #130         // x2 = 630 (final x)
+    mov x4, #40          // y2 = 180 (superior)
+    bl draw_rectangle
+
+            // borde derecho (rectángulo vertical)
+    mov x1, #510          // x1 = 580 (inicio x)
+    mov x2, #120          // y1 = 160 (inferior)
+    mov x3, #520         // x2 = 630 (final x)
+    mov x4, #40          // y2 = 180 (superior)
+    bl draw_rectangle
+
         ldr x30, [sp, #40]
     ldr x7, [sp, #32]
     ldr x4, [sp, #24]
@@ -899,10 +1051,11 @@ pintar_cartel:
 
     ret
 
-//=====================================> BORDE CARTEL  <=====================================//
 
-.global pintar_borde_cartel
-pitar_borde_cartel:
+//=====================================> PINTAR FAROS <=====================================//
+
+.global pintar_faro
+pintar_faro:
     sub sp, sp, #48
     str x1, [sp]
     str x2, [sp, #8]
@@ -911,22 +1064,85 @@ pitar_borde_cartel:
     str x7, [sp, #32]
     str x30, [sp, #40]
 
-            // borde izquierdo (rectángulo vertical)
+        // Cuerpo del faro izquierdo(rectángulo horizontal X4, rectanculo vertical x2)
     bl set_color_negro
-    mov x1, #100          // x1 = 580 (inicio x)
-    mov x2, #120          // y1 = 160 (inferior)
-    mov x3, #120         // x2 = 630 (final x)
-    mov x4, #40          // y2 = 180 (superior)
+    mov x1, #15          // x1 = 580 (inicio x)
+    mov x2, #430          // y1 = 160 (inferior)
+    mov x3, #35            // x2 = 630 (final x)
+    mov x4, #437          // y2 = 180 (superior)
     bl draw_rectangle
 
-            // borde derecho (rectángulo vertical)
-    mov x1, #500          // x1 = 580 (inicio x)
-    mov x2, #120          // y1 = 160 (inferior)
-    mov x3, #520         // x2 = 630 (final x)
-    mov x4, #40          // y2 = 180 (superior)
+    mov x1, #22          // x1 = 580 (inicio x)
+    mov x2, #437          // y1 = 160 (inferior)
+    mov x3, #28         // x2 = 630 (final x)
+    mov x4, #340          // y2 = 180 (superior)
     bl draw_rectangle
 
-    ldr x30, [sp, #40]
+    mov x1, #20          // x1 = 580 (inicio x)
+    mov x2, #340          // y1 = 160 (inferior)
+    mov x3, #30         // x2 = 630 (final x)
+    mov x4, #343          // y2 = 180 (superior)
+    bl draw_rectangle 
+
+    mov x1, #20          // x1 = 580 (inicio x)
+    mov x2, #332          // y1 = 160 (inferior)
+    mov x3, #30         // x2 = 630 (final x)
+    mov x4, #335          // y2 = 180 (superior)
+    bl draw_rectangle 
+
+    mov x1, #24          // x1 = 580 (inicio x)
+    mov x2, #335          // y1 = 160 (inferior)
+    mov x3, #26         // x2 = 630 (final x)
+    mov x4, #330          // y2 = 180 (superior)
+    bl draw_rectangle 
+
+        //Foco lampara (Circulo)
+        bl set_color_amarillo
+    mov x1, 25
+    mov x2, 340
+    mov x3, 4
+    bl draw_circle
+
+           // Cuerpo del faro derecho(rectángulo horizontal X4, rectanculo vertical x2)
+    bl set_color_negro
+    mov x1, #575          // x1 = 580 (inicio x)
+    mov x2, #430          // y1 = 160 (inferior)
+    mov x3, #595            // x2 = 630 (final x)
+    mov x4, #437          // y2 = 180 (superior)
+    bl draw_rectangle
+
+    mov x1, #582          // x1 = 580 (inicio x)
+    mov x2, #437          // y1 = 160 (inferior)
+    mov x3, #588         // x2 = 630 (final x)
+    mov x4, #340          // y2 = 180 (superior)
+    bl draw_rectangle
+
+    mov x1, #580          // x1 = 580 (inicio x)
+    mov x2, #340          // y1 = 160 (inferior)
+    mov x3, #590         // x2 = 630 (final x)
+    mov x4, #343          // y2 = 180 (superior)
+    bl draw_rectangle 
+
+    mov x1, #580          // x1 = 580 (inicio x)
+    mov x2, #332          // y1 = 160 (inferior)
+    mov x3, #590         // x2 = 630 (final x)
+    mov x4, #335          // y2 = 180 (superior)
+    bl draw_rectangle 
+
+    mov x1, #584          // x1 = 580 (inicio x)
+    mov x2, #335          // y1 = 160 (inferior)
+    mov x3, #586         // x2 = 630 (final x)
+    mov x4, #330          // y2 = 180 (superior)
+    bl draw_rectangle 
+
+        //Foco lampara (Circulo)
+        bl set_color_amarillo
+    mov x1, 585
+    mov x2, 340
+    mov x3, 4
+    bl draw_circle
+
+            ldr x30, [sp, #40]
     ldr x7, [sp, #32]
     ldr x4, [sp, #24]
     ldr x3, [sp, #16]
@@ -935,4 +1151,5 @@ pitar_borde_cartel:
     add sp, sp, #48
 
     ret
+
 

@@ -15,89 +15,91 @@ LOAD pintar.o
 LOAD start.o
                 0x0000000000080000                . = 0x80000
 
-.text           0x0000000000080000    0x90e0c
+.text           0x0000000000080000    0x910c4
  *(.text.boot)
  .text.boot     0x0000000000080000    0x100c8 start.o
                 0x0000000000080000                _start
  *(.text*)
- .text          0x00000000000900c8       0x34 app.o
+ .text          0x00000000000900c8       0x3c app.o
                 0x00000000000900c8                main
- .text          0x00000000000900fc       0x84 colores.o
-                0x00000000000900fc                set_color_blanco
-                0x0000000000090108                set_color_gris
-                0x0000000000090114                set_color_negro
-                0x0000000000090120                set_color_verde
-                0x000000000009012c                set_color_rojo
-                0x0000000000090138                set_color_azul
-                0x0000000000090144                set_color_celeste
-                0x0000000000090150                set_color_amarillo
-                0x000000000009015c                set_color_marron
-                0x0000000000090168                set_color_verde_oscuro
-                0x0000000000090174                set_color_rosa
- .text          0x0000000000090180      0x204 funciones.o
-                0x0000000000090180                draw_pixel
-                0x000000000009019c                draw_rectangle
-                0x0000000000090298                draw_circle
- .text          0x0000000000090384      0xa88 pintar.o
-                0x0000000000090384                pintar_fondo
-                0x00000000000903d8                pintar_pasto
-                0x000000000009044c                pintar_arboles
-                0x00000000000904e0                pintar_camino
-                0x0000000000090534                pintar_bancos
-                0x0000000000090614                dibujar_flor_rosa
-                0x00000000000906a0                dibujar_flor_amarilla
-                0x000000000009072c                pintar_flores
-                0x00000000000907c8                pintar_fuente
-                0x0000000000090918                pintar_base_numero_en_negro
-                0x0000000000090918                pintar_letras_fuente
-                0x0000000000090c10                pintar_avion
-                0x0000000000090d50                pintar_cartel
- .text          0x0000000000090e0c    0x80000 start.o
+ .text          0x0000000000090104       0x84 colores.o
+                0x0000000000090104                set_color_blanco
+                0x0000000000090110                set_color_gris
+                0x000000000009011c                set_color_negro
+                0x0000000000090128                set_color_verde
+                0x0000000000090134                set_color_rojo
+                0x0000000000090140                set_color_azul
+                0x000000000009014c                set_color_celeste
+                0x0000000000090158                set_color_amarillo
+                0x0000000000090164                set_color_marron
+                0x0000000000090170                set_color_verde_oscuro
+                0x000000000009017c                set_color_rosa
+ .text          0x0000000000090188      0x204 funciones.o
+                0x0000000000090188                draw_pixel
+                0x00000000000901a4                draw_rectangle
+                0x00000000000902a0                draw_circle
+ .text          0x000000000009038c      0xd38 pintar.o
+                0x000000000009038c                pintar_fondo
+                0x00000000000903e0                pintar_pasto
+                0x0000000000090454                pintar_arboles
+                0x00000000000904e8                pintar_manzana
+                0x0000000000090678                pintar_camino
+                0x00000000000906cc                pintar_bancos
+                0x00000000000907ac                dibujar_flor_rosa
+                0x0000000000090838                dibujar_flor_amarilla
+                0x00000000000908c4                pintar_flores
+                0x0000000000090960                pintar_fuente
+                0x0000000000090ab0                pintar_base_numero_en_negro
+                0x0000000000090ab0                pintar_letras_fuente
+                0x0000000000090da8                pintar_avion
+                0x0000000000090f10                pintar_cartel
+                0x0000000000090f90                pintar_faro
+ .text          0x00000000000910c4    0x80000 start.o
 
-.iplt           0x0000000000110e0c        0x0
- .iplt          0x0000000000110e0c        0x0 app.o
+.iplt           0x00000000001110c4        0x0
+ .iplt          0x00000000001110c4        0x0 app.o
 
-.rela.dyn       0x0000000000110e10        0x0
- .rela.iplt     0x0000000000110e10        0x0 app.o
+.rela.dyn       0x00000000001110c8        0x0
+ .rela.iplt     0x00000000001110c8        0x0 app.o
  .rela.text.boot
-                0x0000000000110e10        0x0 app.o
+                0x00000000001110c8        0x0 app.o
 
-.data           0x0000000000110e0c        0x0
- .data          0x0000000000110e0c        0x0 app.o
- .data          0x0000000000110e0c        0x0 colores.o
- .data          0x0000000000110e0c        0x0 funciones.o
- .data          0x0000000000110e0c        0x0 pintar.o
- .data          0x0000000000110e0c        0x0 start.o
+.data           0x00000000001110c4        0x0
+ .data          0x00000000001110c4        0x0 app.o
+ .data          0x00000000001110c4        0x0 colores.o
+ .data          0x00000000001110c4        0x0 funciones.o
+ .data          0x00000000001110c4        0x0 pintar.o
+ .data          0x00000000001110c4        0x0 start.o
 
-.igot.plt       0x0000000000110e10        0x0
- .igot.plt      0x0000000000110e10        0x0 app.o
+.igot.plt       0x00000000001110c8        0x0
+ .igot.plt      0x00000000001110c8        0x0 app.o
 
-.bss            0x0000000000110e0c        0x0
+.bss            0x00000000001110c4        0x0
  *(.bss*)
- .bss           0x0000000000110e0c        0x0 app.o
- .bss           0x0000000000110e0c        0x0 colores.o
- .bss           0x0000000000110e0c        0x0 funciones.o
- .bss           0x0000000000110e0c        0x0 pintar.o
- .bss           0x0000000000110e0c        0x0 start.o
+ .bss           0x00000000001110c4        0x0 app.o
+ .bss           0x00000000001110c4        0x0 colores.o
+ .bss           0x00000000001110c4        0x0 funciones.o
+ .bss           0x00000000001110c4        0x0 pintar.o
+ .bss           0x00000000001110c4        0x0 start.o
 
-.bss            0x0000000000110e0c        0x4
-                0x0000000000110e10                . = ALIGN (0x10)
- *fill*         0x0000000000110e0c        0x4 
-                0x0000000000110e10                __bss_start = .
+.bss            0x00000000001110c4        0xc
+                0x00000000001110d0                . = ALIGN (0x10)
+ *fill*         0x00000000001110c4        0xc 
+                0x00000000001110d0                __bss_start = .
  *(.bss .bss.*)
  *(COMMON)
-                0x0000000000110e10                __bss_end = .
-                0x0000000000110e10                _end = .
+                0x00000000001110d0                __bss_end = .
+                0x00000000001110d0                _end = .
                 0x0000000000000000                __bss_size = ((__bss_end - __bss_start) >> 0x3)
 OUTPUT(kernel8.elf elf64-littleaarch64)
 LOAD linker stubs
 
-.debug_line     0x0000000000000000      0x480
- .debug_line    0x0000000000000000       0x40 app.o
- .debug_line    0x0000000000000040       0x58 colores.o
- .debug_line    0x0000000000000098       0xbc funciones.o
- .debug_line    0x0000000000000154      0x2dc pintar.o
- .debug_line    0x0000000000000430       0x50 start.o
+.debug_line     0x0000000000000000      0x52e
+ .debug_line    0x0000000000000000       0x42 app.o
+ .debug_line    0x0000000000000042       0x58 colores.o
+ .debug_line    0x000000000000009a       0xbc funciones.o
+ .debug_line    0x0000000000000156      0x388 pintar.o
+ .debug_line    0x00000000000004de       0x50 start.o
 
 .debug_info     0x0000000000000000       0xe6
  .debug_info    0x0000000000000000       0x2e app.o

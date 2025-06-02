@@ -18,7 +18,9 @@ main:
     bl pintar_cartel
     bl pintar_letras_fuente
     bl pintar_avion
-    //bl pintar_borde_cartel
+    bl pintar_faro
+    bl pintar_manzana
+
 
 InfLoop:
     b InfLoop
