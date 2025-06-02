@@ -19,8 +19,8 @@ set_color_negro:
 
 .globl set_color_verde
 set_color_verde:
-    movz x7, 0x24, lsl 16
-    movk x7, 0xCA3D, lsl 0
+    movz x7, 0x34, lsl 16
+    movk x7, 0xFF03, lsl 0   // 0x34FF03
     ret
 
 .globl set_color_rojo
