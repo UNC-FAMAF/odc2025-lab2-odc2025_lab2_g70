@@ -10,7 +10,9 @@ main:
 	
 	bl pintar_fondo 
 	bl pintar_pasto 
-	
+    bl pintar_camino
+	bl pintar_arboles
+    bl pintar_flores
        
        
 

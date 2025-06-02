@@ -44,11 +44,23 @@ set_color_celeste:
 .globl set_color_amarillo
 set_color_amarillo:
     movz x7, 0xFF, lsl 16
-    movk x7, 0xFF00, lsl 0     
+    movk x7, 0xFF00, lsl 0
     ret
 
 .globl set_color_marron
 set_color_marron:
     movz x7, 0x8B, lsl 16
     movk x7, 0x4513, lsl 0     
+    ret
+
+.globl set_color_verde_oscuro
+set_color_verde_oscuro:
+    movz x7, 0x1E, lsl 16
+    movk x7, 0x381F, lsl 0
+    ret
+
+.globl set_color_rosa
+set_color_rosa:
+    movz x7, 0xFF, lsl 16
+    movk x7, 0x69B4, lsl 0      
     ret
