@@ -15,9 +15,10 @@ main:
     bL pintar_bancos
     bl pintar_flores
     bl pintar_fuente
+    bl pintar_cartel
     bl pintar_letras_fuente
-       
-       
+    bl pintar_avion
+    //bl pintar_borde_cartel
 
 InfLoop:
     b InfLoop
