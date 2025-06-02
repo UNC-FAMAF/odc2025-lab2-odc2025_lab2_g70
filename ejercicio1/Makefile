@@ -4,7 +4,7 @@ AOPS = -g --warn --fatal-warnings
 ASM_SRCS = $(wildcard *.s)
 ASM_OBJS = $(ASM_SRCS:%.s=%.o)
 
-.PHONY: cleanT
+.PHONY: clean
 
 all: kernel8.img
 
