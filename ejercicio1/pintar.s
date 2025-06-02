@@ -2,6 +2,8 @@
 .equ SCREEN_HEIGHT,  480
 .equ BITS_PER_PIXEL, 32
 
+//=====================================> PINTAR FONDO <=====================================//
+
 .globl pintar_fondo
 pintar_fondo:
 
@@ -29,6 +31,8 @@ pintar_fondo:
     add sp, sp, #48
 
     ret
+
+//=====================================> PINTAR PASTO <=====================================//
 
 .globl pintar_pasto
 pintar_pasto:
@@ -72,6 +76,8 @@ pintar_pasto:
 
     ret
 
+//=====================================> PINTAR ARBOLES <=====================================//
+
 .globl pintar_arboles
 pintar_arboles:
 
@@ -97,21 +103,8 @@ pintar_arboles:
     mov x3, 40       // radio copa
     bl draw_circle
 
-    // ==== Árbol 2 - grande y alto ====
-    bl set_color_marron
-    mov x1, 290
-    mov x2, 300
-    mov x3, 320
-    mov x4, 440
-    bl draw_rectangle
 
-    bl set_color_verde_oscuro
-    mov x1, 305
-    mov x2, 260
-    mov x3, 60
-    bl draw_circle
-
-    // ==== Árbol 3 - mediano ====
+    // ==== Árbol 2 - mediano ====
     bl set_color_marron
     mov x1, 520
     mov x2, 320
@@ -135,6 +128,8 @@ pintar_arboles:
     add sp, sp, #48
 
     ret
+
+//=====================================> PINTAR CAMINO <=====================================//
 
 .globl pintar_camino
 pintar_camino:
@@ -163,6 +158,8 @@ pintar_camino:
     add sp, sp, #48
     ret
 
+//=====================================> PINTAR BANCOS <=====================================//
+
 .globl pintar_bancos
 pintar_bancos:
     sub sp, sp, #48
@@ -175,20 +172,63 @@ pintar_bancos:
 
     bl set_color_marron
 
-    // Banco izquierdo
-    mov x1, 50
-    mov x2, 320
-    mov x3, 120
-    mov x4, 330
+    // 🪑 Banco 1 (más a la derecha, arriba del camino)
+    // Asiento
+    mov x1, 140
+    mov x2, 330
+    mov x3, 220
+    mov x4, 335
     bl draw_rectangle
 
-    // Banco derecho
-    mov x1, 500
-    mov x2, 320
-    mov x3, 570
-    mov x4, 330
+    // Patas
+    mov x1, 145
+    mov x2, 335
+    mov x3, 150
+    mov x4, 350
     bl draw_rectangle
 
+    mov x1, 210
+    mov x2, 335
+    mov x3, 215
+    mov x4, 350
+    bl draw_rectangle
+
+    // Respaldo
+    mov x1, 140
+    mov x2, 320
+    mov x3, 220
+    mov x4, 325
+    bl draw_rectangle
+
+    // 🪑 Banco 2 (más a la izquierda, arriba del camino)
+    // Asiento
+    mov x1, 400
+    mov x2, 330
+    mov x3, 480
+    mov x4, 335
+    bl draw_rectangle
+
+    // Patas
+    mov x1, 405
+    mov x2, 335
+    mov x3, 410
+    mov x4, 350
+    bl draw_rectangle
+
+    mov x1, 470
+    mov x2, 335
+    mov x3, 475
+    mov x4, 350
+    bl draw_rectangle
+
+    // Respaldo
+    mov x1, 400
+    mov x2, 320
+    mov x3, 480
+    mov x4, 325
+    bl draw_rectangle
+
+    // Restaurar pila
     ldr x30, [sp, #40]
     ldr x7, [sp, #32]
     ldr x4, [sp, #24]
@@ -197,6 +237,10 @@ pintar_bancos:
     ldr x1, [sp]
     add sp, sp, #48
     ret
+
+
+
+//=====================================> PINTAR FLORES <=====================================//
 
 .globl dibujar_flor_rosa
 dibujar_flor_rosa:
@@ -325,21 +369,9 @@ pintar_flores:
     mov x2, 250
     bl dibujar_flor_rosa
 
-    mov x1, 260
-    mov x2, 260
-    bl dibujar_flor_amarilla
-
-    mov x1, 340
-    mov x2, 250
-    bl dibujar_flor_amarilla
-
     mov x1, 420
     mov x2, 260
     bl dibujar_flor_rosa
-
-    mov x1, 500
-    mov x2, 250
-    bl dibujar_flor_amarilla
 
     // === FILA INFERIOR ===
     mov x1, 130
@@ -349,10 +381,6 @@ pintar_flores:
     mov x1, 210
     mov x2, 430
     bl dibujar_flor_rosa
-
-    mov x1, 300
-    mov x2, 420
-    bl dibujar_flor_amarilla
 
     mov x1, 390
     mov x2, 430
@@ -376,6 +404,357 @@ pintar_flores:
     ret
 
 
+//=====================================> PINTAR FUENTE <=====================================//
+.globl pintar_fuente
+pintar_fuente:
+    sub sp, sp, #48
+    str x1, [sp]
+    str x2, [sp, #8]
+    str x3, [sp, #16]
+    str x4, [sp, #24]
+    str x7, [sp, #32]
+    str x30, [sp, #40]
+
+    //========= Base inferior gris =========
+    bl set_color_gris
+    mov x1, 230
+    mov x2, 290
+    mov x3, 390
+    mov x4, 330
+    bl draw_rectangle
+
+    //--------- Línea separadora azul 1 ---------
+    bl set_color_azul
+    mov x1, 230
+    mov x2, 290
+    mov x3, 390
+    mov x4, 291
+    bl draw_rectangle
+
+    //========= Nivel medio gris =========
+    bl set_color_gris
+    mov x1, 260
+    mov x2, 260
+    mov x3, 360
+    mov x4, 290
+    bl draw_rectangle
+
+    //--------- Línea separadora azul 2 ---------
+    bl set_color_azul
+    mov x1, 260
+    mov x2, 260
+    mov x3, 360
+    mov x4, 261
+    bl draw_rectangle
+
+    //========= Nivel superior gris =========
+    bl set_color_gris
+    mov x1, 280
+    mov x2, 240
+    mov x3, 340
+    mov x4, 260
+    bl draw_rectangle
+
+    //--------- Línea separadora azul 3 ---------
+    bl set_color_azul
+    mov x1, 280
+    mov x2, 240
+    mov x3, 340
+    mov x4, 241
+    bl draw_rectangle
+
+    //========= Boquilla central =========
+    bl set_color_azul
+    mov x1, 310
+    mov x2, 235
+    mov x3, 4
+    bl draw_circle
+
+    //========= Chorros de agua =========
+    // Centro alto
+    mov x1, 310
+    mov x2, 220
+    mov x3, 6
+    bl draw_circle
+
+    // Izquierda curva
+    mov x1, 295
+    mov x2, 225
+    mov x3, 5
+    bl draw_circle
+
+    mov x1, 280
+    mov x2, 235
+    mov x3, 4
+    bl draw_circle
+
+    mov x1, 270
+    mov x2, 250
+    mov x3, 3
+    bl draw_circle
+
+    // Derecha curva
+    mov x1, 325
+    mov x2, 225
+    mov x3, 5
+    bl draw_circle
+
+    mov x1, 340
+    mov x2, 235
+    mov x3, 4
+    bl draw_circle
+
+    mov x1, 350
+    mov x2, 250
+    mov x3, 3
+    bl draw_circle
+
+    //========= Restaurar pila =========
+    ldr x30, [sp, #40]
+    ldr x7, [sp, #32]
+    ldr x4, [sp, #24]
+    ldr x3, [sp, #16]
+    ldr x2, [sp, #8]
+    ldr x1, [sp]
+    add sp, sp, #48
+    ret
 
 
+//=====================================> PINTAR LETRAS FUENTE (25x25) <=====================================//
+.globl pintar_letras_fuente
+pintar_letras_fuente:
+    .globl pintar_base_numero_en_negro
+pintar_base_numero_en_negro:
+    sub sp, sp, #48
+    str x1, [sp]
+    str x2, [sp, #8]
+    str x3, [sp, #16]
+    str x4, [sp, #24]
+    str x7, [sp, #32]
+    str x30, [sp, #40]
 
+// O
+    mov x1, 137        
+    mov x2, 94 
+    mov x3, 146      
+    mov x4, 58
+    bl draw_rectangle
+
+    mov x1, 147   
+    mov x2, 57
+    mov x3, 167      
+    mov x4, 46
+    bl draw_rectangle
+
+    mov x1, 168        
+    mov x2, 94 
+    mov x3, 177      
+    mov x4, 58
+    bl draw_rectangle
+
+    mov x1, 147        
+    mov x2, 106
+    mov x3, 167      
+    mov x4, 95
+    bl draw_rectangle
+// D    
+    mov x1, 188     
+    mov x2, 106
+    mov x3, 197      
+    mov x4, 46
+    bl draw_rectangle   
+
+    mov x1, 198    
+    mov x2, 57
+    mov x3, 218      
+    mov x4, 46
+    bl draw_rectangle 
+
+    mov x1, 198     
+    mov x2, 57
+    mov x3, 218      
+    mov x4, 46
+    bl draw_rectangle 
+
+    mov x1, 198     
+    mov x2, 106
+    mov x3, 218      
+    mov x4, 95
+    bl draw_rectangle 
+
+    mov x1, 219  
+    mov x2, 94
+    mov x3, 228      
+    mov x4, 58
+    bl draw_rectangle
+// C
+    mov x1, 239    
+    mov x2, 94
+    mov x3, 248      
+    mov x4, 58
+    bl draw_rectangle 
+    
+    mov x1, 249     
+    mov x2, 57
+    mov x3, 269      
+    mov x4, 46
+    bl draw_rectangle 
+
+    mov x1, 249     
+    mov x2, 106
+    mov x3, 269      
+    mov x4, 95
+    bl draw_rectangle 
+
+    mov x1, 270     
+    mov x2, 94
+    mov x3, 279      
+    mov x4, 83
+    bl draw_rectangle 
+
+    mov x1, 270     
+    mov x2, 69
+    mov x3, 279    
+    mov x4, 58
+    bl draw_rectangle 
+// 2
+    mov x1, 311
+    mov x2, 69
+    mov x3, 320    
+    mov x4, 58
+    bl draw_rectangle 
+
+    mov x1, 311
+    mov x2, 106
+    mov x3, 350
+    mov x4, 95
+    bl draw_rectangle 
+
+    mov x1, 321   
+    mov x2, 94
+    mov x3, 330  
+    mov x4, 83
+    bl draw_rectangle 
+
+    mov x1, 331   
+    mov x2, 82
+    mov x3, 340  
+    mov x4, 70
+    bl draw_rectangle 
+
+    mov x1, 341 
+    mov x2, 69
+    mov x3, 350  
+    mov x4, 58
+    bl draw_rectangle 
+
+    mov x1, 321  
+    mov x2, 57
+    mov x3, 340  
+    mov x4, 46
+    bl draw_rectangle
+
+// 0
+    mov x1, 362     
+    mov x2, 94
+    mov x3, 371  
+    mov x4, 58
+    bl draw_rectangle
+
+    mov x1, 372  
+    mov x2, 57
+    mov x3, 391  
+    mov x4, 46
+    bl draw_rectangle
+
+    mov x1, 372  
+    mov x2, 106
+    mov x3, 391
+    mov x4, 95
+    bl draw_rectangle
+
+    mov x1, 392  
+    mov x2, 94
+    mov x3, 402  
+    mov x4, 58
+    bl draw_rectangle
+
+// 2
+
+    mov x1, 413    
+    mov x2, 69
+    mov x3, 422    
+    mov x4, 58
+    bl draw_rectangle
+
+    mov x1, 413    
+    mov x2, 106
+    mov x3, 453    
+    mov x4, 95
+    bl draw_rectangle
+
+    mov x1, 423    
+    mov x2, 94
+    mov x3, 432    
+    mov x4, 83
+    bl draw_rectangle
+
+    mov x1, 433    
+    mov x2, 82
+    mov x3, 442  
+    mov x4, 70
+    bl draw_rectangle
+
+    mov x1, 443    
+    mov x2, 69
+    mov x3, 453    
+    mov x4, 58
+    bl draw_rectangle
+
+    mov x1, 423    
+    mov x2, 57
+    mov x3, 442    
+    mov x4, 46 
+    bl draw_rectangle
+
+// 5
+
+    mov x1, 464
+    mov x2, 57
+    mov x3, 504    
+    mov x4, 46
+    bl draw_rectangle
+
+    mov x1, 464    
+    mov x2, 82
+    mov x3, 473    
+    mov x4, 58
+    bl draw_rectangle
+
+    mov x1, 474    
+    mov x2, 82
+    mov x3, 493    
+    mov x4, 70
+    bl draw_rectangle
+
+    mov x1, 494     
+    mov x2, 94
+    mov x3, 504  
+    mov x4, 83
+    bl draw_rectangle
+
+    mov x1, 464    
+    mov x2, 106
+    mov x3, 493  
+    mov x4, 95
+    bl draw_rectangle
+
+    // Restaurar registros
+    ldr x30, [sp, #40]
+    ldr x7, [sp, #32]
+    ldr x4, [sp, #24]
+    ldr x3, [sp, #16]
+    ldr x2, [sp, #8]
+    ldr x1, [sp]
+    add sp, sp, #48
+    ret

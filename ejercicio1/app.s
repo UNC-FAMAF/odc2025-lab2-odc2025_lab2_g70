@@ -12,7 +12,10 @@ main:
 	bl pintar_pasto 
     bl pintar_camino
 	bl pintar_arboles
+    bL pintar_bancos
     bl pintar_flores
+    bl pintar_fuente
+    bl pintar_letras_fuente
        
        
 
