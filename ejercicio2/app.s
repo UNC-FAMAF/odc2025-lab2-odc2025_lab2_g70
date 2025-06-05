@@ -26,50 +26,83 @@ main:
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_1
 	bl pintar_manzana_1
+	bl pintar_avion_1
+	bl pintar_cartel_1
+	bl pintar_letras_fuente_1
 
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_2
 	bl pintar_manzana_2
+	bl pintar_avion_2
+	bl pintar_cartel_2
+	bl pintar_letras_fuente_2
 
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_3
 	bl pintar_manzana_3
+	bl pintar_avion_3
+	bl pintar_cartel_3
+	bl pintar_letras_fuente_3
 
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_1
 	bl pintar_manzana_4
+	bl pintar_avion_4
+	bl pintar_cartel_4
+	bl pintar_letras_fuente_4
 
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_2
 	bl pintar_manzana_5
+	bl pintar_avion_5
+	bl pintar_cartel_5
+	bl pintar_letras_fuente_5
 
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_3
 	bl pintar_manzana_6
+	bl pintar_avion_6
+	bl pintar_cartel_6
+	bl pintar_letras_fuente_6
+	
 
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_1
 	bl pintar_manzana_7
+	bl pintar_avion_7
+	bl pintar_cartel_7
+	bl pintar_letras_fuente_7
 
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_2
 	bl pintar_manzana_8
+	bl pintar_avion_8
+	bl pintar_cartel_8
+	bl pintar_letras_fuente_8
 
 	bl delay
 	bl limpiar_frame_manzanas

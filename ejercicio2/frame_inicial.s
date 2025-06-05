@@ -971,25 +971,25 @@ pintar_cartel:
 
         // Cuerpo del cartel (rectángulo horizontal)
     bl set_color_blanco
-    mov x1, #130          // x1 = 580 (inicio x)
-    mov x2, #120          // y1 = 160 (inferior)
-    mov x3, #510         // x2 = 630 (final x)
-    mov x4, #40          // y2 = 180 (superior)
+    mov x1, #130       
+    mov x2, #120         
+    mov x3, #510        
+    mov x4, #40         
     bl draw_rectangle
 
                 // borde izquierdo (rectángulo vertical)
     bl set_color_negro
-    mov x1, #120          // x1 = 580 (inicio x)
-    mov x2, #120          // y1 = 160 (inferior)
-    mov x3, #130         // x2 = 630 (final x)
-    mov x4, #40          // y2 = 180 (superior)
+    mov x1, #120        
+    mov x2, #120         
+    mov x3, #130       
+    mov x4, #40       
     bl draw_rectangle
 
             // borde derecho (rectángulo vertical)
-    mov x1, #510          // x1 = 580 (inicio x)
-    mov x2, #120          // y1 = 160 (inferior)
-    mov x3, #520         // x2 = 630 (final x)
-    mov x4, #40          // y2 = 180 (superior)
+    mov x1, #510         
+    mov x2, #120        
+    mov x3, #520       
+    mov x4, #40        
     bl draw_rectangle
 
         ldr x30, [sp, #40]
@@ -1017,34 +1017,34 @@ pintar_faro:
 
         // Cuerpo del faro izquierdo(rectángulo horizontal X4, rectanculo vertical x2)
     bl set_color_negro
-    mov x1, #15          // x1 = 580 (inicio x)
-    mov x2, #430          // y1 = 160 (inferior)
-    mov x3, #35            // x2 = 630 (final x)
-    mov x4, #437          // y2 = 180 (superior)
+    mov x1, #15          
+    mov x2, #430          
+    mov x3, #35           
+    mov x4, #437         
     bl draw_rectangle
 
-    mov x1, #22          // x1 = 580 (inicio x)
-    mov x2, #437          // y1 = 160 (inferior)
-    mov x3, #28         // x2 = 630 (final x)
-    mov x4, #340          // y2 = 180 (superior)
+    mov x1, #22          
+    mov x2, #437        
+    mov x3, #28         
+    mov x4, #340        
     bl draw_rectangle
 
-    mov x1, #20          // x1 = 580 (inicio x)
-    mov x2, #340          // y1 = 160 (inferior)
-    mov x3, #30         // x2 = 630 (final x)
-    mov x4, #343          // y2 = 180 (superior)
+    mov x1, #20          
+    mov x2, #340        
+    mov x3, #30         
+    mov x4, #343         
     bl draw_rectangle 
 
-    mov x1, #20          // x1 = 580 (inicio x)
-    mov x2, #332          // y1 = 160 (inferior)
-    mov x3, #30         // x2 = 630 (final x)
-    mov x4, #335          // y2 = 180 (superior)
+    mov x1, #20          
+    mov x2, #332          
+    mov x3, #30         
+    mov x4, #335          
     bl draw_rectangle 
 
-    mov x1, #24          // x1 = 580 (inicio x)
-    mov x2, #335          // y1 = 160 (inferior)
-    mov x3, #26         // x2 = 630 (final x)
-    mov x4, #330          // y2 = 180 (superior)
+    mov x1, #24         
+    mov x2, #335         
+    mov x3, #26        
+    mov x4, #330         
     bl draw_rectangle 
 
         //Foco lampara (Circulo)
@@ -1056,34 +1056,34 @@ pintar_faro:
 
            // Cuerpo del faro derecho(rectángulo horizontal X4, rectanculo vertical x2)
     bl set_color_negro
-    mov x1, #575          // x1 = 580 (inicio x)
-    mov x2, #430          // y1 = 160 (inferior)
-    mov x3, #595            // x2 = 630 (final x)
-    mov x4, #437          // y2 = 180 (superior)
+    mov x1, #575         
+    mov x2, #430        
+    mov x3, #595          
+    mov x4, #437         
     bl draw_rectangle
 
-    mov x1, #582          // x1 = 580 (inicio x)
-    mov x2, #437          // y1 = 160 (inferior)
-    mov x3, #588         // x2 = 630 (final x)
-    mov x4, #340          // y2 = 180 (superior)
+    mov x1, #582         
+    mov x2, #437          
+    mov x3, #588        
+    mov x4, #340          
     bl draw_rectangle
 
-    mov x1, #580          // x1 = 580 (inicio x)
-    mov x2, #340          // y1 = 160 (inferior)
-    mov x3, #590         // x2 = 630 (final x)
-    mov x4, #343          // y2 = 180 (superior)
+    mov x1, #580          
+    mov x2, #340          
+    mov x3, #590        
+    mov x4, #343          
     bl draw_rectangle 
 
-    mov x1, #580          // x1 = 580 (inicio x)
-    mov x2, #332          // y1 = 160 (inferior)
-    mov x3, #590         // x2 = 630 (final x)
-    mov x4, #335          // y2 = 180 (superior)
+    mov x1, #580          
+    mov x2, #332          
+    mov x3, #590        
+    mov x4, #335          
     bl draw_rectangle 
 
-    mov x1, #584          // x1 = 580 (inicio x)
-    mov x2, #335          // y1 = 160 (inferior)
-    mov x3, #586         // x2 = 630 (final x)
-    mov x4, #330          // y2 = 180 (superior)
+    mov x1, #584         
+    mov x2, #335         
+    mov x3, #586        
+    mov x4, #330         
     bl draw_rectangle 
 
     //Foco lampara (Circulo)

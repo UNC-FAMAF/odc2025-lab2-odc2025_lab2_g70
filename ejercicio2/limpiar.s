@@ -98,3 +98,34 @@ limpiar_frame_chorros_loop:
 
     ret
     
+
+.globl limpiar_frame_fondo
+limpiar_frame_fondo:
+    sub sp, sp, #48
+    str x1, [sp]
+    str x2, [sp, #8]
+    str x3, [sp, #16]
+    str x4, [sp, #24]
+    str x7, [sp, #32]
+    str x30, [sp, #40]
+
+	bl pintar_fondo 
+	bl pintar_pasto 
+    bl pintar_camino
+	bl pintar_arboles
+    bL pintar_bancos
+    bl pintar_flores
+    bl pintar_faro
+    bl pintar_manzana_19
+    
+    ldr x30, [sp, #40]
+    ldr x7, [sp, #32]
+    ldr x4, [sp, #24]
+    ldr x3, [sp, #16]
+    ldr x2, [sp, #8]
+    ldr x1, [sp]
+    add sp, sp, #48
+
+    ret
+
+
