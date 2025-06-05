@@ -62,7 +62,42 @@ main:
 	bl delay
 	bl limpiar_frame_manzanas
 	bl frame_10
+
+	bl delay
+	bl limpiar_frame_manzanas
+	bl frame_11
+
+	bl delay
+	bl limpiar_frame_manzanas
+	bl frame_12
+
+	bl delay
+	bl limpiar_frame_manzanas
+	bl frame_13
+
+	bl delay
+	bl limpiar_frame_manzanas
+	bl frame_14
+
+	bl delay
+	bl limpiar_frame_manzanas
+	bl frame_15
 	
+	bl delay
+	bl limpiar_frame_manzanas
+	bl frame_16	
+
+	bl delay
+	bl limpiar_frame_manzanas
+	bl frame_17
+	
+	bl delay
+	bl limpiar_frame_manzanas
+	bl frame_18
+	
+	bl delay
+	bl limpiar_frame_manzanas
+	bl frame_19
 Loop:
 
 
