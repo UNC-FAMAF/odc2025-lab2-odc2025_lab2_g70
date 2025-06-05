@@ -19,8 +19,20 @@ set_color_negro:
 
 .globl set_color_verde
 set_color_verde:
-    movz x7, 0x34, lsl 16
-    movk x7, 0xFF03, lsl 0   // 0x34FF03
+    movz x7, 0x7A, lsl 16
+    movk x7, 0xBB36, lsl 0   // 0x34FF03
+    ret
+
+.globl set_color_verde_oscuro
+set_color_verde_oscuro:
+    movz x7, 0x1E, lsl 16
+    movk x7, 0x381F, lsl 0
+    ret
+
+.globl set_color_verde_claro
+set_color_verde_claro:
+    movz x7, 0x5D, lsl 16
+    movk x7, 0x6532, lsl 0
     ret
 
 .globl set_color_rojo
@@ -51,12 +63,6 @@ set_color_amarillo:
 set_color_marron:
     movz x7, 0x8B, lsl 16
     movk x7, 0x4513, lsl 0     
-    ret
-
-.globl set_color_verde_oscuro
-set_color_verde_oscuro:
-    movz x7, 0x1E, lsl 16
-    movk x7, 0x381F, lsl 0
     ret
 
 .globl set_color_rosa

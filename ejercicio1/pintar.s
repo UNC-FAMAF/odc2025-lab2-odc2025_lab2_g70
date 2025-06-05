@@ -47,14 +47,7 @@ pintar_pasto:
     str x7, [sp, #32]
     str x30, [sp, #40]
 
-    bl set_color_verde
-
-    // Rectángulo central (área de pasto)
-    mov x1, 0
-    mov x2, 240
-    mov x3, 640
-    mov x4, 480
-    bl draw_rectangle
+    bl set_color_verde_claro
 
     // Círculo izquierdo (borde redondeado)
     mov x1, 20
@@ -68,6 +61,16 @@ pintar_pasto:
     mov x3, 100
     bl draw_circle
 
+    bl set_color_verde
+
+    // Rectángulo central (área de pasto)
+    mov x1, 0
+    mov x2, 240
+    mov x3, 640
+    mov x4, 480
+    bl draw_rectangle
+    
+
     ldr x30, [sp, #40]
     ldr x7, [sp, #32]
     ldr x4, [sp, #24]
@@ -77,6 +80,7 @@ pintar_pasto:
     add sp, sp, #48
 
     ret
+
 
 //=====================================> PINTAR ARBOLES <=====================================//
 
@@ -422,59 +426,6 @@ dibujar_flor_rosa:
     add sp, sp, #32
     ret
 
-.globl dibujar_flor_amarilla
-dibujar_flor_amarilla:
-    // x1 = centro X
-    // x2 = centro Y
-
-    sub sp, sp, #32
-    str x1, [sp]
-    str x2, [sp, #8]
-    str x7, [sp, #16]
-    str x30, [sp, #24]
-
-    // Pétalos rosas
-    bl set_color_amarillo
-
-    // Arriba
-    mov x3, 4
-    mov x4, x1
-    sub x2, x2, 6
-    bl draw_circle
-    ldr x2, [sp, #8]
-
-    // Abajo
-    mov x3, 4
-    mov x4, x1
-    add x2, x2, 6
-    bl draw_circle
-    ldr x2, [sp, #8]
-
-    // Izquierda
-    mov x3, 4
-    sub x1, x1, 6
-    mov x4, x2
-    bl draw_circle
-    ldr x1, [sp]
-
-    // Derecha
-    mov x3, 4
-    add x1, x1, 6
-    mov x4, x2
-    bl draw_circle
-    ldr x1, [sp]
-
-    // Centro amarillo
-    bl set_color_rosa
-    mov x3, 3
-    bl draw_circle
-
-    ldr x30, [sp, #24]
-    ldr x7, [sp, #16]
-    ldr x2, [sp, #8]
-    ldr x1, [sp]
-    add sp, sp, #32
-    ret
 
 .globl pintar_flores
 pintar_flores:
@@ -646,7 +597,7 @@ pintar_fuente:
     ret
 
 
-//=====================================> PINTAR LETRAS FUENTE (25x25) <=====================================//
+//=====================================> PINTAR LETRAS AVION <=====================================//
 .globl pintar_letras_fuente
 pintar_letras_fuente:
     .globl pintar_base_numero_en_negro
@@ -1135,8 +1086,8 @@ pintar_faro:
     mov x4, #330          // y2 = 180 (superior)
     bl draw_rectangle 
 
-        //Foco lampara (Circulo)
-        bl set_color_amarillo
+    //Foco lampara (Circulo)
+    bl set_color_amarillo
     mov x1, 585
     mov x2, 340
     mov x3, 4
