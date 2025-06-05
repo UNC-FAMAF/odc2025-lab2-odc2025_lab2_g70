@@ -25,81 +25,129 @@ main:
 	
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_1
+	bl limpiar_frame_chorros
+	bl pintar_chorros_1
+	bl pintar_manzana_1
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_2
+	bl limpiar_frame_chorros
+	bl pintar_chorros_2
+	bl pintar_manzana_2
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_3
+	bl limpiar_frame_chorros
+	bl pintar_chorros_3
+	bl pintar_manzana_3
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_4
+	bl limpiar_frame_chorros
+	bl pintar_chorros_1
+	bl pintar_manzana_4
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_5
+	bl limpiar_frame_chorros
+	bl pintar_chorros_2
+	bl pintar_manzana_5
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_6
+	bl limpiar_frame_chorros
+	bl pintar_chorros_3
+	bl pintar_manzana_6
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_7
+	bl limpiar_frame_chorros
+	bl pintar_chorros_1
+	bl pintar_manzana_7
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_8
+	bl limpiar_frame_chorros
+	bl pintar_chorros_2
+	bl pintar_manzana_8
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_9
+	bl limpiar_frame_chorros
+	bl pintar_chorros_3
+	bl pintar_manzana_9
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_10
+	bl limpiar_frame_chorros
+	bl pintar_chorros_1
+	bl pintar_manzana_10
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_11
+	bl limpiar_frame_chorros
+	bl pintar_chorros_2
+	bl pintar_manzana_11
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_12
+	bl limpiar_frame_chorros
+	bl pintar_chorros_3
+	bl pintar_manzana_12
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_13
+	bl limpiar_frame_chorros
+	bl pintar_chorros_1
+	bl pintar_manzana_13
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_14
+	bl limpiar_frame_chorros
+	bl pintar_chorros_2
+	bl pintar_manzana_14
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_15
+	bl limpiar_frame_chorros
+	bl pintar_chorros_3
+	bl pintar_manzana_15
 	
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_16	
+	bl limpiar_frame_chorros
+	bl pintar_chorros_1
+	bl pintar_manzana_16	
 
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_17
+	bl limpiar_frame_chorros
+	bl pintar_chorros_2
+	bl pintar_manzana_17
 	
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_18
+	bl limpiar_frame_chorros
+	bl pintar_chorros_3
+	bl pintar_manzana_18
 	
 	bl delay
 	bl limpiar_frame_manzanas
-	bl frame_19
+	bl limpiar_frame_chorros
+	bl pintar_chorros_1
+	bl pintar_manzana_19
 Loop:
+	bl delay
+	bl limpiar_frame_chorros_loop
+	bl pintar_chorros_2
+	
+	bl delay
+	bl limpiar_frame_chorros_loop
+	bl pintar_chorros_3
 
+	bl delay
+	bl limpiar_frame_chorros_loop
+	bl pintar_chorros_1
 
 	b Loop
 
