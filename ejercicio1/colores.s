@@ -1,4 +1,7 @@
 // colores.s
+
+// Se crean funciones para asignar en x7 un color para poder usarlo en pintar.salvo
+
 .globl set_color_blanco
 set_color_blanco:
     movz x7, 0xFD, lsl 16

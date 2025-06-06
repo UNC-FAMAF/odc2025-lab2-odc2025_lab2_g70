@@ -15,42 +15,42 @@ pintar_manzana_17:
 
     bl set_color_rojo
     mov x1, 90
-    mov x2, 460
+    mov x2, 450
     mov x3, 4
     bl draw_circle
 
     bl set_color_negro
     mov x1, 90
-    mov x2, 456
+    mov x2, 446
     mov x3, 91
-    mov x4, 455
+    mov x4, 445
     bl draw_rectangle
 
     bl set_color_verde
     mov x1, 91
-    mov x2, 456
+    mov x2, 446
     mov x3, 94
-    mov x4, 455
+    mov x4, 445
     bl draw_rectangle
 
     bl set_color_rojo
     mov x1, 70
-    mov x2, 480
+    mov x2, 470
     mov x3, 4
     bl draw_circle
 
     bl set_color_negro
     mov x1, 70
-    mov x2, 476
+    mov x2, 466
     mov x3, 71
-    mov x4, 475
+    mov x4, 465
     bl draw_rectangle
 
     bl set_color_verde
     mov x1, 71
-    mov x2, 476
+    mov x2, 466
     mov x3, 74
-    mov x4, 475
+    mov x4, 465
     bl draw_rectangle
 
 

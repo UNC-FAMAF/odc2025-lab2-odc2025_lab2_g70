@@ -7,9 +7,12 @@ Integrante 4: -
 
 Descripción ejercicio 1: Realizamos una representación de un parque, con un avion volando sobre el cielo con el texto integrado y detalles en el fondo que sigan con la tematica del espacio (plaza) que elegimos.
 
-Descripción ejercicio 2: Usamos el ejercicio anterior como primer frame. Para luego agregar movimiento, hicimos una gran cantidad de frames para dar aquella ilusión en la cual paresca una situacion natural de un espacio similar.
+Descripción ejercicio 2: Usamos el ejercicio anterior como primer frame. Para luego agregar movimiento, hicimos una gran cantidad de frames para dar aquella ilusión en la cual parezca una situacion natural de un espacio similar, lo que se mueve es el agua de la fuente, las manzanas que caen y llegan hasta el suelo y el avion.
 
 
 Justificación instrucciones ARMv8: No hemos usado ninguna funcion que no este ya definida, salvo por  "ldr" y "str" que son equivalentes a "ldur" y "stur".
 
-
+Aclaraciones: 
+-El avion no sigue el recorrido por falta de frames que no alcanzamos a hacer por falta de tiempo. 
+-No pinta el espacio que deja el objeto movido ya que a veces pasaba por distintos colores y eso nos iba a llevar mucho tiempo, asi que decidimos que vuelva a pintar la figura completa en vez de rellenar la parte faltante. 
+-La funcion pintar_letras_fuente nos olvidamos de modificarla a pintar_letras_cartel.

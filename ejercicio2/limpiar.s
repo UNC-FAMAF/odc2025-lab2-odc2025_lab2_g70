@@ -116,7 +116,6 @@ limpiar_frame_fondo:
     bL pintar_bancos
     bl pintar_flores
     bl pintar_faro
-    bl pintar_manzana_19
     
     ldr x30, [sp, #40]
     ldr x7, [sp, #32]

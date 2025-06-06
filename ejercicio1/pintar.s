@@ -2,6 +2,11 @@
 .equ SCREEN_HEIGHT,  480
 .equ BITS_PER_PIXEL, 32
 
+// Se utilizan funciones de funciones.s donde se utilizan para ir rellenando la imagen y se utilizan funciones como rectangulo y circulo
+// Ademas se usan las funciones de colores.s para asignar un color antes de dibujar 
+
+// Aca van las funciones que se usan en app.salvo
+
 
 //=====================================> PINTAR FONDO <=====================================//
 

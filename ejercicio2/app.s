@@ -8,6 +8,8 @@ main:
 	mov x20, x0
     mov x0, x20
 	
+	//=====================================> FRAME INICIAL <=====================================//
+
 	bl pintar_fondo 
 	bl pintar_pasto 
     bl pintar_camino
@@ -21,8 +23,11 @@ main:
     bl pintar_faro
     bl pintar_manzana
 
-	//=====================================> CAEN LAS MANZANAS <=====================================//
-	
+	//=====================================> EMPIEZA LA "ANIMACION" <=====================================//
+
+// lo que se hace es usar un delay para que de tiempo de apreciar el "movimiento de los objetos"
+// para luego empezar a borrar el frame anterior y pintar el nuevo utilizando los objetos que no se mueven y los objetos que se mueven avanzan de a 10px
+
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
@@ -215,7 +220,11 @@ main:
 	bl pintar_avion_19  
 	bl pintar_cartel_19
 	bl pintar_letras_fuente_19
+
+	// termina el movimiento de las manzanas y llegan al suelo por lo cual ya no se mueven más y el avion vuelve al frame inicial por falta de tiempo para hacerlo avanzar hasta su posicion.
 Loop:
+	// se repite el movimiento del agua por eso el loop
+
 	bl delay
 	bl limpiar_frame_chorros_loop
 	bl pintar_chorros_2

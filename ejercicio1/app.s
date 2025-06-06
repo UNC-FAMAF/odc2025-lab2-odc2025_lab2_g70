@@ -7,7 +7,9 @@
 main:
     mov x20, x0
     mov x0, x20
-	
+    
+	// Unicamente llama a estas "Funciones" para poder pintar la imagen donde estan hechas en pintar.s
+
 	bl pintar_fondo 
 	bl pintar_pasto 
     bl pintar_camino
