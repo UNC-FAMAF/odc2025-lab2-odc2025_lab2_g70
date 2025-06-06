@@ -1,0 +1,15 @@
+Nombre y apellido 
+Integrante 1: JOAQUIN FIOL (joaquin.fiol@mi.un.edu.ar)
+Integrante 2: GABRIEL EMILIANO CISTERNA (gabriel.cisterna@mi.unc.edu.ar)
+Integrante 3: -
+Integrante 4: -
+
+
+Descripción ejercicio 1: Realizamos una representación de un parque, con un avion volando sobre el cielo con el texto integrado y detalles en el fondo que sigan con la tematica del espacio (plaza) que elegimos.
+
+Descripción ejercicio 2: Usamos el ejercicio anterior como primer frame. Para luego agregar movimiento, hicimos una gran cantidad de frames para dar aquella ilusión en la cual paresca una situacion natural de un espacio similar.
+
+
+Justificación instrucciones ARMv8: No hemos usado ninguna funcion que no este ya definida, salvo por  "ldr" y "str" que son equivalentes a "ldur" y "stur".
+
+
