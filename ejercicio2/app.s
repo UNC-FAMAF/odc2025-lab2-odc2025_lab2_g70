@@ -179,26 +179,42 @@ main:
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_1
-	bl pintar_manzana_16	
+	bl pintar_manzana_16
+	bl pintar_avion_16
+	bl pintar_cartel_16
+	bl pintar_letras_fuente_16
 
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_2
 	bl pintar_manzana_17
+	bl pintar_avion_17
+	bl pintar_cartel_17
+	bl pintar_letras_fuente_17
 	
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_3
 	bl pintar_manzana_18
+	bl pintar_avion_18
+	bl pintar_cartel_18
+	bl pintar_letras_fuente_18
 	
 	bl delay
 	bl limpiar_frame_manzanas
 	bl limpiar_frame_chorros
+	bl limpiar_frame_fondo
 	bl pintar_chorros_1
 	bl pintar_manzana_19
+	bl pintar_avion_19  
+	bl pintar_cartel_19
+	bl pintar_letras_fuente_19
 Loop:
 	bl delay
 	bl limpiar_frame_chorros_loop
